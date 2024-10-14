@@ -1,0 +1,17 @@
+.user-card {
+    transition: transform 0.2s;
+    display: inline-flex;
+    width: 21rem;
+    height: 320px;
+    margin: 20px;
+    border: 5px solid;
+    border-radius: 20px;
+}
+
+.user-card:hover {
+    transform: scale(1.05);
+}
+
+.status {
+    font-weight: bold;
+}

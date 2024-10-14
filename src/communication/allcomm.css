@@ -1,0 +1,27 @@
+.table th {
+    background-color: #28a745;
+    color: white;
+}
+
+.table td {
+    color: #333;
+    background-color: aliceblue;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #27ae60;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: red;
+    color: black;
+}
