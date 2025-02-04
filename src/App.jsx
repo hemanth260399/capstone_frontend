@@ -20,6 +20,8 @@ import { Allqueries } from './feedback/allqueries.jsx'
 import { appreducer, initialstate } from './pages/Appreducer.js'
 import AppContext from './pages/Appcontext.js'
 import { Report } from './feedback/report.jsx'
+import { LoginSuccess } from './pages/googleLogin.jsx'
+import { NotFound } from './pages/notFound.jsx'
 function App() {
   let [state, dispatch] = useReducer(appreducer, initialstate)
   let Privateroute = ({ component }) => {
@@ -52,11 +54,12 @@ function App() {
             </Route>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/auth/loginSuccess" element={<LoginSuccess />} />
             <Route path="/forgetpassword" element={<Forgetpassword />} />
             <Route path="/register-verify-email" element={<Emailverifyregister />} />
             <Route path='/changepassword' element={<Changepassword />} />
             <Route path="/addfeedback" element={<Addfeedback />} />
-            <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </AppContext.Provider>

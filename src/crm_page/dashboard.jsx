@@ -78,28 +78,30 @@ export const Dashboardpage = () => {
             <div className="row">
                 <div className="col-lg-12">
                     <h2 className="mb-4 mt-3 text-dark">Customer Details</h2>
-                    <table className="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Purchase Value</th>
-                                <th>customer Details</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {customers.map(customer => (
-                                <tr key={customer.id}>
-                                    <td>{customer.id}</td>
-                                    <td>{customer.name}</td>
-                                    <td>{customer.email}</td>
-                                    <td>{customer.purchase_value}</td>
-                                    <td><button className='btn' onClick={() => { navigate(`/customerdata?id=${customer.id}`) }}>View Details</button></td>
+                    <div className="table-responsive">
+                        <table className="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Purchase Value</th>
+                                    <th>customer Details</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {customers.map(customer => (
+                                    <tr key={customer.id}>
+                                        <td>{customer.id}</td>
+                                        <td>{customer.name}</td>
+                                        <td>{customer.email}</td>
+                                        <td>{customer.purchase_value}</td>
+                                        <td><button className='btn' onClick={() => { navigate(`/customerdata?id=${customer.id}`) }}>View Details</button></td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

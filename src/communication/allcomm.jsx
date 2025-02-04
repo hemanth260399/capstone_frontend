@@ -16,7 +16,7 @@ export let Allcommuication = () => {
             }
         }
         getCommunicationData()
-    });
+    }, []);
     let deletecomm = async (id) => {
         try {
             setloading(true)

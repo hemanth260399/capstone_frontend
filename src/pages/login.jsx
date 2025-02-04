@@ -15,9 +15,8 @@ export let Login = () => {
         e.preventDefault()
         try {
             setloading(true)
-            let { msg, staffdetails, token } = await loginapi(logindetail)
+            let { staffdetails, token } = await loginapi(logindetail)
             setloading(false)
-            alert(msg)
             localStorage.setItem("useremail", JSON.stringify(staffdetails))
             localStorage.setItem("token", token)
             dispatch({ type: "LOGIN", payload: staffdetails })
@@ -28,13 +27,19 @@ export let Login = () => {
             alert(e.message)
         }
     }
+    let googleLogin = () => {
+        window.open(`${import.meta.env.VITE_BE_URL}/auth/google`, "_self")
+    }
+    let githubLogin = () => {
+        window.open(`${import.meta.env.VITE_BE_URL}/auth/github`, "_self")
+    }
     if (state.autentication) {
         return <Navigate to="/userpage" />
     }
     return (
         <>
             <div className="container d-flex align-items-center justify-content-center vh-100">
-                <div className="card" style={{ width: '25rem', borderColor: 'green' }}>
+                <div className="card" style={{ width: '25rem', borderColor: 'green', paddingBottom: 50 }}>
                     <div className="card-body">
                         <h3 className="text-center" style={{ color: 'green' }}>Login</h3>
                         <form>
@@ -53,9 +58,14 @@ export let Login = () => {
                             <Link to="register" style={{ color: 'green', marginLeft: 30 }}>Register</Link>
                         </div>
                     </div>
+                    <div className="text-center mt-3" style={{ width: 300, marginLeft: "12%" }}>
+                        <button className="h5 p-2 bg-primary rounded-pill border border-primary" style={{ color: "red" }} onClick={googleLogin}><i className="fa-brands fa-google me-4 "></i>Sign Up with google</button>
+                        <button className="h5 p-2 bg-secondary text-white rounded-pill border border-primary" onClick={githubLogin}><i className="fa-brands fa-github me-4 "></i>Sign Up with Github</button>
+                    </div>
                 </div>
-            </div>
-            {loading && <Loader />}
+            </div >
+            {loading && <Loader />
+            }
         </>
     )
 }

@@ -39,7 +39,7 @@ export let Forgetpassword = () => {
                                 <input type="email" className="form-control" id="email" name="email" onChange={datachange} value={userdata.email} placeholder="Enter email" required />
                             </div>
                             <button type="submit" className="btn" onClick={emailsubmit} style={{ backgroundColor: '#28a745', color: 'white', width: '100%' }}>
-                                Register
+                                Submit
                             </button>
                         </form>
                     </div>

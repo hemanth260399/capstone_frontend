@@ -58,8 +58,7 @@ export let deletecustomerdataapi = async (id) => {
 }
 export let editcustomerdataapi = async (data, id) => {
     try {
-        console.log(data)
-        let response = await axios.patch(`${url}/newcustomer?id=${id}`, data,
+        let response = await axios.put(`${url}/newcustomeredit?id=${id}`, data,
             {
                 headers: {
                     "auth-token": localStorage.getItem("token") || "",

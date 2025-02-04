@@ -46,3 +46,8 @@
     background-color: rgba(40, 167, 69, 0.1);
     border-radius: 4px;
 }
+.toggleButton{
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+}

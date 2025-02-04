@@ -92,6 +92,7 @@ export let Register = () => {
                     </div>
                 </div>
             </div>
+            <button>SIGN UP WITH GOOGLE</button>
             {loading && <Loader />}
         </>
     )

@@ -49,7 +49,7 @@ export let Changepassword = () => {
             <div className="container d-flex align-items-center justify-content-center vh-80">
                 <div className="card" style={{ width: '25rem', borderColor: 'green' }}>
                     <div className="card-body">
-                        <h3 className="text-center" style={{ color: 'green' }}>Login</h3>
+                        <h3 className="text-center" style={{ color: 'green' }}>Change Password</h3>
                         <form>
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">New Password</label>
@@ -60,7 +60,7 @@ export let Changepassword = () => {
                                 <input type="password" className="form-control" id="newpassword" name="newpassword" onChange={passwordchange} value={password.newpassword} placeholder="Confirm Password" required />
                             </div>
                             <button type="submit" className="btn" onClick={emailsubmit} style={{ backgroundColor: '#28a745', color: 'white', width: '100%' }}>
-                                Register
+                                Submit
                             </button>
                         </form>
                     </div>

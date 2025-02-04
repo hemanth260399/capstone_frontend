@@ -40,3 +40,18 @@ export let changepasswordapi = async (token, data) => {
         throw new Error(err.response.data.msg)
     }
 }
+export let googleLoginApi = async () => {
+    try {
+        let response = await axios.get(`${url}/auth/loginSuccess`, {
+            withCredentials: true,
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Credentials': 'true',
+            }
+        })
+        return response.data
+    } catch (err) {
+        throw new Error(err.response.data.msg)
+    }
+}
