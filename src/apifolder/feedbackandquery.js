@@ -2,7 +2,13 @@ import axios from "axios";
 let url = import.meta.env.VITE_BE_URL
 export let addfeedbackandqueryapi = async (data) => {
     try {
-        let response = await axios.post(`${url}/addfeedback`, data)
+        let response = await axios.post(`${url}/addfeedback`, data,
+            {
+                headers: {
+                    "auth-token": localStorage.getItem("token") || "",
+                },
+            }
+        )
         return response.data
     } catch (err) {
         throw new Error(err.response.data.msg)
