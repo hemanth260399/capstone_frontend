@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { googleLoginApi } from "../apifolder/registerapi"
 import { useNavigate } from "react-router-dom"
 import AppContext from "./Appcontext"
+import { Loader } from "./loading"
 
 export let LoginSuccess = () => {
     let navigate = useNavigate()
